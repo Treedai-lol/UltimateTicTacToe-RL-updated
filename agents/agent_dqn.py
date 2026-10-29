@@ -1,7 +1,7 @@
 from html.entities import name2codepoint
 from agents.agent import Agent
 
-import gym
+import gymnasium as gym
 import numpy as np
 import torch
 from torch.optim import Adam
@@ -78,7 +78,7 @@ class DQNetwork(torch.nn.Module):
 
 class DQNAgent(Agent):
 
-    def __init__(self, player = 1, env = gym.make('LunarLander-v2'), loading=True, name = ""):
+    def __init__(self, player = 1, env = gym.make('LunarLander-v3'), loading=True, name = ""):
 
         learning_rate=0.00005
         gamma=0.99
