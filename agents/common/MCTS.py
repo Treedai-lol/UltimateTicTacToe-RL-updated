@@ -2,8 +2,7 @@ import cProfile
 import math
 import random
 from time import perf_counter
-from lib import Board
-from lib import BoardInit
+from agents.common.lib import Board,BoardInit
 # For MCTS: 0 stands for not yet determined, 1 is o win, 2 is x win, 3 is draw
 # For the backpropogation, 0.5 is a draw and 1 is o win, 0 is x win
 

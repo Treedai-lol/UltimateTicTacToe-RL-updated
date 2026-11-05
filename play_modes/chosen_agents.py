@@ -16,7 +16,7 @@ from agents.agent_minimax_pruning import MinimaxPruningAgent
 #from agents.agent_dqn import DQNAgent
 from agents.agent_mine import MyAgent
 
-agent2 = RandomAgent(2)#MinimaxPruningAgent(2, 3, True)
+agent2 = MinimaxPruningAgent(2, 3, True)
 env = SinglePlayerEnv(agent2)
 
 agent = MyAgent(1)

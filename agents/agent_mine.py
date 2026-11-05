@@ -1,6 +1,7 @@
 from agents.agent import Agent
-from agents.common.bitboard import BitBoard,SmallBoard
 from agents.common.lib import Board
+import math
+from agents.common.MCTS import mcts_search
 
 class MyAgent(Agent):
 
@@ -8,12 +9,20 @@ class MyAgent(Agent):
         super().__init__(self)
 
     def getAction(self, env, observation):
-        temp = env.pygame.board.grid.append(env.pygame.board.largeGrid)
+        temp = list(env.pygame.board.grid)
+        temp.extend(env.pygame.board.largeGrid)
         if(len(env.pygame.board.possible))>1:
             temp.append(9)
         else:
-            temp.append(env.pygame.board.possible)
+            temp.append(int(env.pygame.board.possible[0]))
         temp.append(env.pygame.board.currentPlayer)
+        #print(env.pygame.board.grid)
+        #print(len(env.pygame.board.largeGrid))
+        #print(len(env.pygame.board.possible))
+        #print(env.pygame.board.currentPlayer)
+        #print(temp)
         b = Board(temp)
-        action = 0
+        #b.PrintBoard()
+        move = mcts_search(b,1.024)
+        action = move.bit_length()-1
         return action

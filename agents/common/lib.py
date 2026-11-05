@@ -11,6 +11,7 @@ from agents.common.bitboard import SmallBoard
 from agents.common import utils
 class Board():
     def __init__(self, raw: list)->None:
+        assert(len(raw)==92)
         self.bs = BitBoard(raw[0:81])
         self.wonboards = SmallBoard(raw[81:90])
         self.sb = raw[90]

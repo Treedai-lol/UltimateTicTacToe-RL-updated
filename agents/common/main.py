@@ -1,12 +1,12 @@
-from lib import BoardInit
-from lib import Board
-import random
-import statistics
-import math
-from MCTS import mcts_search
+#from lib import BoardInit
+#from lib import Board
+#import random
+#import statistics
+#import math
+#from MCTS import mcts_search
 from time import perf_counter
-from eval import Eval
-import bots
+#from eval import Eval
+#import bots
 def RandomVSRandom():
     board = BoardInit()
     curreval = 0
@@ -25,7 +25,11 @@ def RandomVSRandom():
     return [board.GameFinished(),curreval]
 
 def main():
-    print("Hello World!")
+    l1 = [1,2,3]
+    l2 = [0,0,0]
+    temp = l1
+    temp.append(l2)
+    print(temp)
     pass
 if __name__ == '__main__':
     t1 = perf_counter()
