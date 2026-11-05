@@ -2,7 +2,7 @@
 
 # necessary for Marie
 import sys
-sys.path.append("C:\\Users\\Marie\\Organisation_Marie\\X\\3A\\INF 581 - Advanced machine learning\\Project\\UltimateTicTacToe-RL")
+sys.path.append(r"C:\Users\user\Desktop\新增資料夾 (2)")
 
 
 from envs.env_two_player import TwoPlayerEnv
@@ -13,13 +13,14 @@ from agents.agent_player import PlayerAgent
 from agents.agent_random import RandomAgent
 from agents.agent_minimax import MinimaxAgent
 from agents.agent_minimax_pruning import MinimaxPruningAgent
-from agents.agent_dqn import DQNAgent
+#from agents.agent_dqn import DQNAgent
+from agents.agent_mine import MyAgent
 
 agent2 = RandomAgent(2)#MinimaxPruningAgent(2, 3, True)
 env = SinglePlayerEnv(agent2)
 
-agent = DQNAgent(1, env, True)
-agent.learnNN(env, False, 1000, 1500, "_test")
+agent = MyAgent(1)
+#agent.learnNN(env, False, 1000, 1500, "_test")
 display = True
 
 
