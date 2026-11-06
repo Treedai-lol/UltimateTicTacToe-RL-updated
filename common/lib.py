@@ -6,9 +6,9 @@
 # for move representation: [67] is on floor(67/9)=6 and 67%9=4
 from __future__ import annotations
 from math import floor
-from agents.common.bitboard import BitBoard
-from agents.common.bitboard import SmallBoard
-from agents.common import utils
+from common.bitboard import BitBoard
+from common.bitboard import SmallBoard
+from common import utils
 class Board():
     def __init__(self, raw: list)->None:
         assert(len(raw)==92)

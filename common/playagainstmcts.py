@@ -1,8 +1,8 @@
 import tkinter as tk
 import math
 from lib import BoardInit, Board
-from MCTS import mcts_search
-import utils
+from common.MCTS import mcts_search
+import common.utils as utils
 
 # Global board state
 board = BoardInit()

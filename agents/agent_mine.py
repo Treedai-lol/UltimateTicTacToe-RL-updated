@@ -1,7 +1,6 @@
 from agents.agent import Agent
-from agents.common.lib import Board
-import math
-from agents.common.MCTS import mcts_search
+from common.lib import Board
+from common.MCTS import mcts_search
 
 class MyAgent(Agent):
 
@@ -23,6 +22,7 @@ class MyAgent(Agent):
         #print(temp)
         b = Board(temp)
         #b.PrintBoard()
-        move = mcts_search(b,1.024)
+        move = mcts_search(b,0.256)
+        b.PrintBoard()
         action = move.bit_length()-1
         return action

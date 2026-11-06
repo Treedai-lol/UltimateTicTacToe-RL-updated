@@ -2,7 +2,7 @@ import cProfile
 import math
 import random
 from time import perf_counter
-from agents.common.lib import Board,BoardInit
+from common.lib import Board,BoardInit
 # For MCTS: 0 stands for not yet determined, 1 is o win, 2 is x win, 3 is draw
 # For the backpropogation, 0.5 is a draw and 1 is o win, 0 is x win
 
@@ -89,14 +89,14 @@ def mcts_search(root_board = BoardInit(), time=0.5):
 
         if not node.is_fully_expanded() and node.board.GameFinished()==0:
             node = node.expand()
-        
-        if node.board.GameFinished():
-            if node.board.GameFinished()==1:
-                winner = 1.0
-            if node.board.GameFinished()==2:
-                winner = 0.0
-            if node.board.GameFinished()==3:
-                winner = 0.5   
+
+        n = node.board.GameFinished()
+        if n==1:
+            winner = 1.0
+        if n==2:
+            winner = 0.0
+        if n==3:
+            winner = 0.5   
         else:    
             winner = node.rollout()
         

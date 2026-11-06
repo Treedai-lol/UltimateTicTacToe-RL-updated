@@ -2,7 +2,7 @@ from eval import Eval
 import lib
 from lib import Board
 from lib import BoardInit
-import utils
+import common.utils as utils
 import random
 INF = 1000000
 def RandomMover(board:Board,time:int):

@@ -2,24 +2,28 @@
 
 # necessary for Marie
 import sys
-sys.path.append(r"C:\Users\user\Desktop\新增資料夾 (2)")
+sys.path.append(r"C:\Users\user\Desktop\新增資料夾")
 
 
 from envs.env_two_player import TwoPlayerEnv
 from envs.env_single_player import SinglePlayerEnv
 import pygame
+from time import perf_counter
 
 from agents.agent_player import PlayerAgent
 from agents.agent_random import RandomAgent
 from agents.agent_minimax import MinimaxAgent
 from agents.agent_minimax_pruning import MinimaxPruningAgent
+from agents.agent_minimax_several_rewards import MinimaxPruningAgentSeveralRewards
 #from agents.agent_dqn import DQNAgent
 from agents.agent_mine import MyAgent
 
-agent2 = MinimaxPruningAgent(2, 3, True)
+agent2 = MinimaxPruningAgentSeveralRewards(2, 6, False, 2, 18)
+#agent2 = MinimaxPruningAgent(2, 3, True)
 env = SinglePlayerEnv(agent2)
 
 agent = MyAgent(1)
+#agent = RandomAgent(1)
 #agent.learnNN(env, False, 1000, 1500, "_test")
 display = True
 
