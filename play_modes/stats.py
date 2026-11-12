@@ -6,19 +6,19 @@ sys.path.append("C:\\Users\\Marie\\Organisation_Marie\\X\\3A\\INF 581 - Advanced
 
 # for Astrid
 import sys
-from agents.agent_dqn import DQNAgent
-sys.path.append("/home/astrid/Documents/X/3A/P2/INF581 - Machine Learning and Autonomous Agents/project/UltimateTicTacToe-RL/")
+sys.path.append(r"C:\Users\user\Desktop\新增資料夾")
 
 
 from envs.env_single_player import SinglePlayerEnv
 import pygame
 
-from agents.agent_player import PlayerAgent
+#from agents.agent_player import PlayerAgent
 from agents.agent_random import RandomAgent
-from agents.agent_minimax import MinimaxAgent
-from agents.agent_minimax_pruning import MinimaxPruningAgent
+#from agents.agent_minimax import MinimaxAgent
+#from agents.agent_minimax_pruning import MinimaxPruningAgent
 from agents.agent_minimax_several_rewards import MinimaxPruningAgentSeveralRewards
-from agents.agent_mcts import MCTSAgent
+#from agents.agent_mcts import MCTSAgent
+from agents.agent_mine import MyAgent
 import tqdm
 
 
@@ -29,13 +29,13 @@ agents1 = [
 ]
 
 agents2 = [
-    MCTSAgent(2, 2000)
+    MyAgent()
 ]
 
-display = False
+display = True
 
 if __name__ == '__main__':
-    N = 20
+    N = 2
     n = len(agents1)
     wins = [[0 for i in range(n)] for j in range(n)]
     equalities = [[0 for i in range(n)] for j in range(n)]

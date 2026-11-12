@@ -21,8 +21,7 @@ class MyAgent(Agent):
         #print(env.pygame.board.currentPlayer)
         #print(temp)
         b = Board(temp)
-        #b.PrintBoard()
         move = mcts_search(b,0.256)
-        b.PrintBoard()
+        #b.PrintBoard()
         action = move.bit_length()-1
         return action
