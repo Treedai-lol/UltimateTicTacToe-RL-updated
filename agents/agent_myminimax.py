@@ -1,0 +1,27 @@
+from agents.agent import Agent
+from common.lib import Board
+from common.bots import minimax_move
+
+class MyAgent(Agent):
+
+    def __init__(self, player = 1):
+        super().__init__(self)
+
+    def getAction(self, env, observation):
+        temp = list(env.pygame.board.grid)
+        temp.extend(env.pygame.board.largeGrid)
+        if(len(env.pygame.board.possible))>1:
+            temp.append(9)
+        else:
+            temp.append(int(env.pygame.board.possible[0]))
+        temp.append(env.pygame.board.currentPlayer)
+        #print(env.pygame.board.grid)
+        #print(len(env.pygame.board.largeGrid))
+        #print(len(env.pygame.board.possible))
+        #print(env.pygame.board.currentPlayer)
+        #print(temp)
+        b = Board(temp)
+        move = minimax_move(b,5)
+        #b.PrintBoard()
+        action = move.bit_length()-1
+        return action

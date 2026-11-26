@@ -16,7 +16,7 @@ from agents.agent_minimax import MinimaxAgent
 from agents.agent_minimax_pruning import MinimaxPruningAgent
 from agents.agent_minimax_several_rewards import MinimaxPruningAgentSeveralRewards
 #from agents.agent_dqn import DQNAgent
-from agents.agent_mine import MyAgent
+from agents.agent_mymcts import MyAgent
 
 agent2 = MinimaxPruningAgentSeveralRewards(2, 6, False, 2, 18)
 #agent2 = MinimaxPruningAgent(2, 3, True)

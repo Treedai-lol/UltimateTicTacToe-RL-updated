@@ -18,7 +18,7 @@ from agents.agent_random import RandomAgent
 #from agents.agent_minimax_pruning import MinimaxPruningAgent
 from agents.agent_minimax_several_rewards import MinimaxPruningAgentSeveralRewards
 #from agents.agent_mcts import MCTSAgent
-from agents.agent_mine import MyAgent
+from agents.agent_mymcts import MyAgent
 import tqdm
 
 
